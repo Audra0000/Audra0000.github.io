@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ana Alcaraz - Game Developer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <nav class="nav" id="mainNav">
+    <button class="nav-back" id="navBack" onclick="goHome(event)" style="display:none">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+      Back
+    </button>
+    <a class="nav-logo" id="navLogo" href="#" onclick="goHome(event)">Ana Alcaraz</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right-spacer" id="navRightSpacer"></div>
+  </nav>
+
+  <div id="mainSite">
+
+    <section class="hero" id="about">
+      <div class="hero-video-bg">
+        <video autoplay muted loop playsinline poster="images/hero-poster.jpg">
+          <source src="images/hero-bg.webm" type="video/webm" />
+          <source src="images/hero-bg.mp4"  type="video/mp4" />
+        </video>
+        <div class="hero-video-overlay"></div>
+      </div>
+
+      <div class="container hero-container">
+        <div class="hero-photo-wrap reveal-fade">
+          <div class="hero-photo">
+            <img src="images/photo.jpg" alt="Ana Alcaraz"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
+            <div class="photo-placeholder">
+              <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+                <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.58-7 8-7s8 3 8 7"/>
+              </svg>
+            </div>
+          </div>
+          <div class="availability-badge">
+            <span class="badge-dot"></span>
+            Available for internships
+          </div>
+        </div>
+
+        <div class="hero-text">
+          <h1 class="hero-name reveal-up" style="--d:60ms">Ana Alcaraz</h1>
+          <p class="hero-role reveal-up" style="--d:120ms">Game Developer &amp; Engine Programmer</p>
+          <p class="hero-bio reveal-up" style="--d:180ms">
+            I'm a game development student based in Spain, focused on programming and design. I'm particularly interested in engine architecture and game systems, and I enjoy building the technical foundations behind games. I've worked on both gameplay and engine-level features, bringing ideas from concept to playable implementation.
+          </p>
+
+          <div class="skills-row reveal-up" style="--d:240ms">
+            <span class="skill-pill">C++</span>
+            <span class="skill-pill">C#</span>
+            <span class="skill-pill">Python</span>
+            <span class="skill-pill">GLSL</span>
+            <span class="skill-pill">HLSL</span>
+            <span class="skill-pill">OpenGL</span>
+            <span class="skill-pill">Unity</span>
+            <span class="skill-pill">Unreal</span>
+          </div>
+
+          <div class="hero-links reveal-up" style="--d:300ms">
+            <a href="mailto:alcarazmartinezana@email.com" class="hero-link">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
+              alcarazmartinezana@email.com
+            </a>
+            <a href="https://github.com/Audra0000" target="_blank" class="hero-link">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+              GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/ana-alcaraz-martinez-058287351/" target="_blank" class="hero-link">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              LinkedIn
+            </a>
+            <a href="https://anaalcaraz.itch.io/" target="_blank" class="hero-link">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6.5C4 5.1 5.1 4 6.5 4h11C18.9 4 20 5.1 20 6.5v1c0 .8-.4 1.6-1 2.1V18a2 2 0 01-2 2H7a2 2 0 01-2-2v-8.4c-.6-.5-1-1.3-1-2.1v-1z"/><path d="M9 13h6m-6 3h6"/></svg>
+              itch.io
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- PROJECTS -->
+    <section class="projects" id="projects">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-label">Projects</span>
+          <h2 class="section-title">Selected work</h2>
+        </div>
+
+        <div class="projects-list">
+
+          <!-- Project 0 -->
+          <article class="project-row reveal-up" style="--d:0ms" onclick="openProject(0)">
+            <div class="project-row-media">
+              <img src="images/project1.jpg" alt="Wave Engine"
+                onerror="this.parentElement.classList.add('no-img')"/>
+              <div class="project-img-fallback">
+                <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
+              </div>
+              <div class="project-row-media-overlay">
+                <span class="project-row-view-btn">View project →</span>
+              </div>
+            </div>
+            <div class="project-row-body">
+              <div class="project-tags">
+                <span class="tag">C++</span>
+                <span class="tag">OpenGL</span>
+                <span class="tag">Engine</span>
+              </div>
+              <h3>Wave Engine</h3>
+              <p>A custom 3D game engine built entirely from scratch in C++ and OpenGL, powering Son of Ithaca — an adventure game inspired by Homer's Odyssey.</p>
+              <ul class="project-row-systems">
+                <li>Shadow mapping & Octree spatial partitioning</li>
+                <li>Resource management with .meta files</li>
+                <li>Lua scripting via LuaBridge</li>
+              </ul>
+              <div class="project-cta">
+                View project
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 1 -->
+          <article class="project-row reveal-up" style="--d:80ms" onclick="openProject(1)">
+            <div class="project-row-media">
+              <img src="images/project2.jpg" alt="Indie Game"
+                onerror="this.parentElement.classList.add('no-img')"/>
+              <div class="project-img-fallback">
+                <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              </div>
+              <div class="project-row-media-overlay">
+                <span class="project-row-view-btn">View project →</span>
+              </div>
+            </div>
+            <div class="project-row-body">
+              <div class="project-tags">
+                <span class="tag">Unity</span>
+                <span class="tag">C#</span>
+                <span class="tag">Design</span>
+              </div>
+              <h3>Indie Game — Title Here</h3>
+              <p>A short description of the game concept, the mechanics you designed, and what makes it technically interesting.</p>
+              <ul class="project-row-systems">
+                <li>Custom state machine for player AI</li>
+                <li>Procedural level generation</li>
+                <li>Shipped on itch.io</li>
+              </ul>
+              <div class="project-cta">
+                View project
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- EDUCATION + GOALS -->
+    <section class="education" id="education">
+      <div class="container">
+        <div class="section-header reveal-up">
+          <span class="section-label">Background</span>
+          <h2 class="section-title">Education &amp; goals</h2>
+        </div>
+
+        <div class="education-grid">
+          <div class="edu-card reveal-up" style="--d:0ms">
+            <div class="edu-card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+            </div>
+            <span class="edu-card-label">Education</span>
+            <h3 class="edu-card-title">Game Development Degree</h3>
+            <p class="edu-card-school">University Name — Spain</p>
+            <p class="edu-card-years">2022 – 2026</p>
+            <p class="edu-card-desc">
+              Studying engine programming, graphics, game design, and production.
+              Focused on C++, real-time graphics, and systems architecture.
+            </p>
+          </div>
+
+          <div class="edu-card looking-card reveal-up" style="--d:100ms">
+            <div class="edu-card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            </div>
+            <span class="edu-card-label">What I'm looking for</span>
+            <h3 class="edu-card-title">Open to opportunities</h3>
+            <div class="looking-items">
+              <div class="looking-item"><span class="looking-dot"></span><span>Engine programming internships</span></div>
+              <div class="looking-item"><span class="looking-dot"></span><span>Gameplay programming roles</span></div>
+              <div class="looking-item"><span class="looking-dot"></span><span>Game jam collaborations</span></div>
+              <div class="looking-item"><span class="looking-dot"></span><span>Interesting side projects</span></div>
+            </div>
+            <a href="mailto:your@email.com" class="edu-cta">
+              Get in touch
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="section-divider"></div>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="contact-inner reveal-up">
+          <span class="section-label">Contact</span>
+          <h2 class="section-title contact-title">Let's build<br>something.</h2>
+          <p class="contact-sub">Open to internships, collaborations, and interesting side projects.</p>
+          <div class="contact-links">
+            <a href="mailto:your@email.com" class="contact-link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
+              your@email.com
+            </a>
+            <a href="https://github.com/Audra0000" target="_blank" class="contact-link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+              GitHub
+            </a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" class="contact-link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              LinkedIn
+            </a>
+            <a href="https://yourname.itch.io" target="_blank" class="contact-link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6.5C4 5.1 5.1 4 6.5 4h11C18.9 4 20 5.1 20 6.5v1c0 .8-.4 1.6-1 2.1V18a2 2 0 01-2 2H7a2 2 0 01-2-2v-8.4c-.6-.5-1-1.3-1-2.1v-1z"/><path d="M9 13h6m-6 3h6"/></svg>
+              itch.io
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>© 2025 Ana Alcaraz</span>
+      <span>Built with precision and C++</span>
+    </footer>
+
+  </div>
+
+  <!-- ===================== PROJECT PAGE ===================== -->
+  <div id="projectPage" class="project-page" style="display:none">
+    <div class="project-page-inner">
+
+      <!-- TOP: header full width -->
+      <div class="pp-top">
+        <div class="pp-breadcrumb" id="projectBreadcrumb"></div>
+        <span class="pp-label" id="projectMeta"></span>
+        <h1 class="pp-title" id="projectTitle"></h1>
+        <p class="pp-subtitle" id="projectSubtitle"></p>
+        <div class="pp-tags" id="projectTagsEl"></div>
+      </div>
+
+      <!-- VIDEO centrado full width -->
+      <div class="pp-video-wrap" id="projectVideoWrap" style="display:none">
+        <div class="pp-video-container" id="projectVideoContainer"></div>
+      </div>
+
+      <!-- CONTRIBUTIONS: alternating text + image -->
+      <div class="pp-contributions" id="projectContributions"></div>
+
+      <div class="pp-divider"></div>
+
+      <!-- BOTTOM: key systems, tech stack, what i learned -->
+      <div class="pp-bottom-grid">
+        <div class="pp-meta-block">
+          <div class="pp-meta-heading">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            Key Systems
+          </div>
+          <ul class="pp-systems-list" id="projectSystems"></ul>
+        </div>
+        <div class="pp-meta-block">
+          <div class="pp-meta-heading">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            Tech Stack
+          </div>
+          <div class="pp-stack-pills" id="projectStack"></div>
+        </div>
+        <div class="pp-insight-card">
+          <div class="pp-insight-label">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            What I Learned
+          </div>
+          <p class="pp-insight-text" id="projectWhatILearned"></p>
+        </div>
+      </div>
+
+      <div class="pp-links" id="projectLinksEl"></div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
