@@ -89,7 +89,7 @@ const projects = [
       {
         title: "Shadow Mapping",
         text: "I implemented a complete shadow mapping solution for directional lights. This required generating depth maps from the light's perspective, managing multiple coordinate spaces (world, light, NDC), and integrating the resulting shadow information into the fragment shader. Building it from scratch forced a deep understanding of the full rendering pipeline.",
-        image: "", // e.g. "images/wave_shadows.jpg"
+        image: "images/wave_shadows.gif", // e.g. "images/wave_shadows.jpg"
       },
       {
         title: "Resource Management",
@@ -99,7 +99,7 @@ const projects = [
       {
         title: "Lua Scripting System",
         text: "I embedded Lua into the engine via LuaBridge, treating scripts as first-class resources with their own importer and component type. The engine compiles script files to bytecode at import time, and the scripting layer exposes engine functionality so designers can drive behaviour without touching C++.",
-        image: "", // e.g. "images/wave_scripting.jpg"
+        image: "images/scripting.gif", // e.g. "images/wave_scripting.jpg"
       },
       {
         title: "Octree & Spatial Partitioning",
@@ -109,7 +109,7 @@ const projects = [
       {
         title: "Lighting System",
         text: "I implemented point and directional lights from scratch — both the shader-side calculations and the editor integration. Lights are fully editable from the editor: colour, intensity, and range can be tweaked in real time and the results are immediately reflected on scene materials. The lighting model computes diffuse and specular contributions per light type and feeds them into the material pipeline.",
-        image: "", // e.g. "images/wave_lighting.jpg"
+        image: "images/wave_light.gif", // e.g. "images/wave_lighting.jpg"
       },
     ],
 
