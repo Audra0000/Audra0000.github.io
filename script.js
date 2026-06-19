@@ -134,6 +134,40 @@ const projects = [
     ]
   },
 
+  {
+    title: "Railway to Hell",
+    category: "Gameplay Programming",
+    meta: "Gameplay Programming · 2024",
+    subtitle: "Replace with a 1-2 sentence summary of the project.",
+    tags: ["C++", "Gameplay"],
+
+    videoUrl: "https://www.youtube.com/embed/J-ttC8Gt458",
+
+    contributions: [
+      {
+        title: "Feature Name",
+        text: "Describe what you built, why it was hard, and what it enables.",
+        image: "", // "images/railway_feature1.jpg"
+      },
+      {
+        title: "Another Feature",
+        text: "Describe what you built.",
+        image: "",
+      },
+    ],
+
+    keySystems: [
+      "Replace with the key systems you built",
+    ],
+    techStack: ["C++"],
+    whatILearned: "Replace this with what you actually learned.",
+
+    screenshots: [],
+    links: [
+      { url: "https://github.com/Audra0000", label: "View on GitHub", style: "primary" }
+    ]
+  },
+
   // ═══════════════════════════════════════════════════════════════════════════
   // PROJECT TEMPLATE — duplicate this block for each new project
   // ═══════════════════════════════════════════════════════════════════════════
@@ -167,6 +201,7 @@ const projects = [
     ],
     techStack: ["Unity", "C#", "UI Toolkit"],
     whatILearned: "Replace this with what you actually learned.",
+
 
     screenshots: [],
     links: [
