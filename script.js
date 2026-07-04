@@ -135,77 +135,219 @@ const projects = [
   },
 
   {
+    title: "Son of Ithaca",
+    category: "UI Programming",
+    meta: "UI Programming · 2024",
+    subtitle: "An Odyssey-inspired action-adventure game built on Wave Engine, where I developed the interaction and UI systems that tie the player's actions to the world.",
+    tags: ["C++", "Wave Engine", "NoesisGUI"],
+
+    videoUrl: "",
+
+    contributions: [
+      {
+        title: "Statue Interaction UI",
+        text: "I designed and implemented the on-screen prompts that guide the player through the game's statue puzzles, showing a button indicator to freeze enemy statues and a separate one to rotate puzzle statues into place. The system reads the active input device and updates the prompt accordingly.",
+        image: "",
+      },
+      {
+        title: "Dynamic Popups",
+        text: "Using NoesisGUI, I built a popup system that can be triggered from anywhere in the game to display contextual information without interrupting gameplay flow, handling layout, animation and dismissal logic in a reusable way.",
+        image: "",
+      },
+      {
+        title: "Input-Aware Tutorials",
+        text: "I implemented a tutorial system that swaps its prompts and icons depending on whether the player is using a gamepad or a keyboard, so instructions always match the input the player is actually using.",
+        image: "",
+      },
+      {
+        title: "UI Stack System",
+        text: "To keep the interface predictable as multiple screens and popups could appear at once, I built a stack-based manager that tracks which UI elements are open and closes or pauses lower layers automatically, preventing overlapping menus and popups from breaking the experience.",
+        image: "",
+      },
+    ],
+
+    keySystems: [
+      "Button-prompt UI for statue puzzle interactions",
+      "Dynamic popup system built with NoesisGUI",
+      "Input-aware tutorials that adapt to gamepad or keyboard",
+      "Stack-based UI manager preventing overlapping screens",
+    ],
+    techStack: ["C++", "Wave Engine", "NoesisGUI", "XAML"],
+    whatILearned: "Working on Son of Ithaca's UI taught me how much care goes into making an interface feel invisible: prompts have to react instantly to input changes, and popups need to never fight each other for the player's attention. Building the UI stack in particular pushed me to think about interface state the same way I would think about a game state machine.",
+
+    screenshots: [],
+    links: [
+      { url: "https://nobody-games-studio.itch.io/son-of-ithaca", label: "Play on itch.io", style: "primary" }
+    ]
+  },
+
+  {
     title: "Railway to Hell",
     category: "Gameplay Programming",
-    meta: "Gameplay Programming · 2024",
-    subtitle: "Replace with a 1-2 sentence summary of the project.",
-    tags: ["C++", "Gameplay"],
+    meta: "Lead Programmer · 2024",
+    subtitle: "A 2D metroidvania set in a hellish version of a railway system, where a girl from a trapped gang fights her way through demonic lords to escape with her deceased sister. Built in C++ with SDL2, with no game engine.",
+    tags: ["C++", "SDL2", "Metroidvania"],
 
     videoUrl: "https://www.youtube.com/embed/J-ttC8Gt458",
 
     contributions: [
       {
-        title: "Feature Name",
-        text: "Describe what you built, why it was hard, and what it enables.",
-        image: "", // "images/railway_feature1.jpg"
+        title: "Team Coordination & Production",
+        text: "As lead programmer, I coordinated the programming team's workload and priorities alongside general production duties, making sure the different systems being built in parallel came together into a coherent game.",
+        image: "",
       },
       {
-        title: "Another Feature",
-        text: "Describe what you built.",
+        title: "Final Boss & Enemies",
+        text: "I developed the game's final boss encounter along with several of the mini enemies the player faces while exploring the railway lines, covering their behaviour, attack patterns and combat balance.",
+        image: "",
+      },
+      {
+        title: "Core UI & Player Mechanics",
+        text: "I implemented the game's UI and the player's main mechanics, covering melee and ranged combat as well as the progressive skill upgrades the player unlocks while exploring.",
+        image: "",
+      },
+      {
+        title: "Technical Art",
+        text: "Beyond programming, I worked as technical artist for the project, adding the animations and transitions that bring the characters and world to life and hooking them into the gameplay systems.",
         image: "",
       },
     ],
 
     keySystems: [
-      "Replace with the key systems you built",
+      "Final boss and enemy encounter design",
+      "Melee and ranged player combat with skill upgrades",
+      "Core UI implementation",
+      "Animation and transition pipeline as technical artist",
+      "Team coordination and production oversight",
     ],
-    techStack: ["C++"],
-    whatILearned: "Replace this with what you actually learned.",
+    techStack: ["C++", "SDL2"],
+    whatILearned: "Leading the programming team on Railway to Hell taught me how much of game development is coordination rather than just code: keeping combat, UI, boss design and animation moving together on schedule required constant communication. Building enemy and boss behaviour from scratch also gave me a much deeper appreciation for how combat feel is tuned, not just implemented.",
 
     screenshots: [],
     links: [
-      { url: "https://github.com/Audra0000", label: "View on GitHub", style: "primary" }
+      { url: "https://anaalcaraz.itch.io/railway-to-hell", label: "Play on itch.io", style: "primary" }
     ]
   },
 
-  // ═══════════════════════════════════════════════════════════════════════════
-  // PROJECT TEMPLATE — duplicate this block for each new project
-  // ═══════════════════════════════════════════════════════════════════════════
   {
-    title: "Indie Game",
-    category: "Game Design",
-    meta: "Game Design · 2024",
-    subtitle: "Replace with a 1-2 sentence summary of the project.",
-    tags: ["Unity", "C#", "Design"],
+    title: "Superliminal: Liminal Spaces",
+    category: "Level Design & Blueprints",
+    meta: "Level Design & Blueprints · 2024",
+    subtitle: "A three-room level for Superliminal built with a team of three, following the kishotenketsu narrative structure and Unreal Engine Blueprints to recreate the game's perspective-scaling mechanic from scratch.",
+    tags: ["Unreal Engine", "Blueprints", "Level Design"],
 
-    videoUrl: "",
-    // Example: "https://www.youtube.com/embed/VIDEO_ID"
+    videoUrl: "https://www.youtube.com/embed/X68Ad7ryohU",
 
     contributions: [
       {
-        title: "Feature Name",
-        text: "Describe what you built, why it was hard, and what it enables.",
-        image: "", // "images/game_feature1.gif"
+        title: "Interactable Objects (A_MOVABLE)",
+        text: "I built the Blueprint behind every pickable object in the level, alternating between a free physics state and a held state. Two booleans drive it: IsLocked gates whether an object can be picked up at all, and IsHeld tracks whether the player is currently carrying it. Picking an object up disables its physics and collision and attaches it to the player; dropping it detaches it, re-enables physics, and restores full collision.",
+        image: "",
       },
       {
-        title: "Another Feature",
-        text: "Describe what you built.",
+        title: "Perspective-Scaling Character System",
+        text: "I implemented the character's manipulation system, the core of Superliminal's mechanic. A raycast from the camera detects interactable objects every 0.1 seconds and highlights them for the player. On pickup, the object's starting bounds, distance and scale are stored and a 1.65-second timeline smoothly rescales it as its distance to the camera changes, so pulling an object closer visibly grows or shrinks it in real time. Holding Shift or Ctrl while rotating switches between pitch, yaw and roll on the fly.",
+        image: "",
+      },
+      {
+        title: "Interactive Crosshair",
+        text: "I built the crosshair widget that gives the player immediate feedback on what they can interact with: it sits at 40% opacity during normal exploration and snaps to fully opaque the moment the player's aim lands on an interactable object, then fades back out when they look away.",
+        image: "",
+      },
+      {
+        title: "Level Design: Room 1 & Room 3",
+        text: "The core design ideas for the first and third rooms were mine. For the first room I proposed the introductory corridor followed by the missing-floor puzzle, where the player has to scale up an object to bridge the gap and reach the exit. For the third room I came up with the twist: a fake wall hiding a drop into near-total darkness, guided only by upward-facing wall lamps and a glowing cube the player carries as a portable light source, leading into a platforming section built on the walls of the maze below.",
+        image: "",
+      },
+      {
+        title: "Kishotenketsu Level Structure",
+        text: "Together with my team, we structured the level's three rooms around the four-act kishotenketsu format we'd been studying: an introductory corridor that teaches movement, a first room that teaches object scaling, a second room built around buttons and doors, and a third room that flips the lighting and layout for a final twist.",
         image: "",
       },
     ],
 
     keySystems: [
-      "Custom state machine for player AI",
-      "Procedural level generation",
-      "Save system with JSON serialisation"
+      "Movable interactable objects with a locked/held state machine (A_MOVABLE)",
+      "Distance-based object scaling via raycasting and a Timeline-driven Lerp",
+      "Object rotation across pitch, yaw and roll using modifier keys",
+      "Interactive crosshair with hover-based opacity feedback",
+      "Room 1 and Room 3 design, built into a three-room kishotenketsu structure",
     ],
-    techStack: ["Unity", "C#", "UI Toolkit"],
-    whatILearned: "Replace this with what you actually learned.",
-
+    techStack: ["Unreal Engine", "Blueprints", "UMG"],
+    whatILearned: "Coming up with the first and third rooms taught me two very different design lessons. The first room was about teaching a mechanic through a single, unmissable action: scale the object, bridge the gap. The third room was about withholding information on purpose, using darkness and a moving light source to make the player question a space they thought they already understood. Building the manipulation system that made both of those ideas playable also taught me how much of Superliminal's feel comes down to timing: the scaling timeline had to be fast enough to feel instant but smooth enough not to look like a glitch.",
 
     screenshots: [],
     links: [
-      { url: "", label: "Play on itch.io", style: "primary" }
+      { url: "https://anaalcaraz.itch.io/level-design-of-3-levels-superliminal", label: "Play & read the LDD", style: "primary" }
+    ]
+  },
+
+  {
+    title: "Racing Game",
+    category: "Gameplay Programming",
+    meta: "Gameplay Programming · 2024",
+    subtitle: "A top-down racing game with multiplayer support and two AI-controlled karts to race against, built with Raylib, Box2D and C++.",
+    tags: ["C++", "Raylib", "Box2D"],
+
+    // TEMP: replace with the actual Racing Game gameplay video when ready.
+    videoUrl: "https://www.youtube.com/embed/J-ttC8Gt458",
+
+    contributions: [
+      {
+        title: "Core Gameplay & Systems",
+        text: "I worked across most areas of the game rather than owning a single system, contributing to the AI karts, the lap and timing systems, the kart selection and win screens, and the track hazards that affect how the race plays out.",
+        image: "",
+      },
+    ],
+
+    keySystems: [
+      "Moving AI karts that challenge the player",
+      "Lap timer with lap and best lap tracking",
+      "Lap counter and FPS counter",
+      "Win screens for each player type and the AI",
+      "Player and kart selection screen with four karts, each with different stats",
+      "Speed boost panels and a snow surface that slows karts down",
+      "Drift mechanic bound to the shift key",
+    ],
+    techStack: ["C++", "Raylib", "Box2D"],
+    whatILearned: "This project was a good introduction to building a full game loop with physics from the ground up. Tuning the drift and the different kart stats with Box2D showed me how much iteration goes into making a vehicle feel fun to control rather than just functional.",
+
+    screenshots: [],
+    links: [
+      { url: "https://github.com/AsiGamer29/RacingGame", label: "View on GitHub", style: "primary" }
+    ]
+  },
+
+  {
+    title: "Pinball",
+    category: "Gameplay Programming",
+    meta: "Gameplay Programming · 2024",
+    subtitle: "An adaptation of the Game Boy Advance game Pokémon Pinball: Ruby and Sapphire, rebuilding its core pinball mechanics with Raylib, Box2D and C++.",
+    tags: ["C++", "Raylib", "Box2D"],
+
+    // TEMP: replace with the actual Pinball gameplay video when ready.
+    videoUrl: "https://www.youtube.com/embed/J-ttC8Gt458",
+
+    contributions: [
+      {
+        title: "Core Pinball Mechanics",
+        text: "I worked across most of the project rather than a single isolated feature, focusing on rebuilding the core pinball mechanics of the original game while trimming it down to what mattered: the orange track, the Pokémon center and mart, bonus stages, power-ups and the catching mechanic were all left out so the flippers, ball physics and scoring could take center stage.",
+        image: "",
+      },
+    ],
+
+    keySystems: [
+      "Physics-based pinball mechanics with Box2D",
+      "Score, highscore and previous score tracking",
+      "Life counter and FPS counter",
+      "Pokéball and Pokémon animations on the track",
+    ],
+    techStack: ["C++", "Raylib", "Box2D"],
+    whatILearned: "Adapting an existing game rather than designing one from scratch was a different kind of challenge: it meant deciding which mechanics were essential to keep the game feeling right and which ones could be cut without losing what made the original fun. It also gave me hands-on experience tuning ball physics until it actually felt like pinball.",
+
+    screenshots: [],
+    links: [
+      { url: "https://github.com/Aniolobolo/PinballGameFisica2", label: "View on GitHub", style: "primary" }
     ]
   }
 ];
