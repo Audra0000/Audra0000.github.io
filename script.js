@@ -130,7 +130,7 @@ const projects = [
     screenshots: [],
 
     links: [
-      { url: "https://github.com/Audra0000", label: "View on GitHub", style: "primary" }
+      { url: "https://github.com/NobodyGamesStudio/WaveEngine", label: "View on GitHub", style: "primary" }
     ]
   },
 
@@ -141,7 +141,7 @@ const projects = [
     subtitle: "An Odyssey-inspired action-adventure game built on Wave Engine, where I developed the interaction and UI systems that tie the player's actions to the world.",
     tags: ["C++", "Wave Engine", "NoesisGUI"],
 
-    videoUrl: "",
+    videoUrl: "https://www.youtube.com/embed/PYzuc0fsHpM",
 
     contributions: [
       {
@@ -231,50 +231,40 @@ const projects = [
 
   {
     title: "Superliminal: Liminal Spaces",
-    category: "Level Design & Blueprints",
-    meta: "Level Design & Blueprints · 2024",
-    subtitle: "A three-room level for Superliminal built with a team of three, following the kishotenketsu narrative structure and Unreal Engine Blueprints to recreate the game's perspective-scaling mechanic from scratch.",
+    category: "Level Design",
+    meta: "Level Design · 2024",
+    subtitle: "A three-room level for Superliminal built with a team of three, using the kishotenketsu narrative structure to introduce, develop and twist the game's perspective-scaling mechanic across the level.",
     tags: ["Unreal Engine", "Blueprints", "Level Design"],
 
     videoUrl: "https://www.youtube.com/embed/X68Ad7ryohU",
 
     contributions: [
       {
-        title: "Interactable Objects (A_MOVABLE)",
-        text: "I built the Blueprint behind every pickable object in the level, alternating between a free physics state and a held state. Two booleans drive it: IsLocked gates whether an object can be picked up at all, and IsHeld tracks whether the player is currently carrying it. Picking an object up disables its physics and collision and attaches it to the player; dropping it detaches it, re-enables physics, and restores full collision.",
-        image: "",
+        title: "Room 1: Teaching the Mechanic",
+        text: "The level opens with a short corridor where knee-height obstacles push the player toward jumping without any on-screen prompt, the same trick the original game uses to teach movement implicitly. Right after it, the first room asks for a single clear action: pick up the object left at the start, scale it up while pulling it closer, and drop it into the gap in the floor to reach the exit. The goal was to teach the core scaling mechanic through one unmissable puzzle before adding any more layers on top of it.",
+        image: "images/superliminal-room1.jpg",
       },
       {
-        title: "Perspective-Scaling Character System",
-        text: "I implemented the character's manipulation system, the core of Superliminal's mechanic. A raycast from the camera detects interactable objects every 0.1 seconds and highlights them for the player. On pickup, the object's starting bounds, distance and scale are stored and a 1.65-second timeline smoothly rescales it as its distance to the camera changes, so pulling an object closer visibly grows or shrinks it in real time. Holding Shift or Ctrl while rotating switches between pitch, yaw and roll on the fly.",
-        image: "",
+        title: "Room 2: Buttons and Doors",
+        text: "The second room introduces buttons and doors working together. Three doors face three buttons, and the real exit only opens once all three are pressed at the same time. Players can either explore the side corridors to find two extra cubes, or realize that a single cube, scaled up enough, can cover all three buttons at once. We added soft lights above each button later on, after early testing showed players didn't immediately connect the three buttons to the same door.",
+        image: "images/superliminal-room2.jpg",
       },
       {
-        title: "Interactive Crosshair",
-        text: "I built the crosshair widget that gives the player immediate feedback on what they can interact with: it sits at 40% opacity during normal exploration and snaps to fully opaque the moment the player's aim lands on an interactable object, then fades back out when they look away.",
-        image: "",
-      },
-      {
-        title: "Level Design: Room 1 & Room 3",
-        text: "The core design ideas for the first and third rooms were mine. For the first room I proposed the introductory corridor followed by the missing-floor puzzle, where the player has to scale up an object to bridge the gap and reach the exit. For the third room I came up with the twist: a fake wall hiding a drop into near-total darkness, guided only by upward-facing wall lamps and a glowing cube the player carries as a portable light source, leading into a platforming section built on the walls of the maze below.",
-        image: "",
-      },
-      {
-        title: "Kishotenketsu Level Structure",
-        text: "Together with my team, we structured the level's three rooms around the four-act kishotenketsu format we'd been studying: an introductory corridor that teaches movement, a first room that teaches object scaling, a second room built around buttons and doors, and a third room that flips the lighting and layout for a final twist.",
-        image: "",
+        title: "Room 3: The Twist",
+        text: "The third room hides a wall that can be grabbed and pulled aside, revealing a drop into near total darkness. From there, the player follows a row of wall lamps facing upward toward a glowing cube that works as a portable light source. That cube activates a button seen through a hidden window, opens a door, and later doubles as a bridge over a gap before the level moves into a short platforming section built on top of the maze walls below, lit from underneath by the same lamps.",
+        image: "images/superliminal-room3.jpg",
       },
     ],
 
     keySystems: [
-      "Movable interactable objects with a locked/held state machine (A_MOVABLE)",
-      "Distance-based object scaling via raycasting and a Timeline-driven Lerp",
-      "Object rotation across pitch, yaw and roll using modifier keys",
-      "Interactive crosshair with hover-based opacity feedback",
-      "Room 1 and Room 3 design, built into a three-room kishotenketsu structure",
+      "Kishotenketsu-based three-room structure: setup, mechanic, and twist",
+      "Room 1: single-puzzle introduction to the scaling mechanic",
+      "Room 2: multi-button puzzle with two valid solution paths",
+      "Room 3: light-guided navigation twist built around a portable light source",
+      "Perspective-scaling and interaction systems built in Blueprints to support the design",
     ],
-    techStack: ["Unreal Engine", "Blueprints", "UMG"],
-    whatILearned: "Coming up with the first and third rooms taught me two very different design lessons. The first room was about teaching a mechanic through a single, unmissable action: scale the object, bridge the gap. The third room was about withholding information on purpose, using darkness and a moving light source to make the player question a space they thought they already understood. Building the manipulation system that made both of those ideas playable also taught me how much of Superliminal's feel comes down to timing: the scaling timeline had to be fast enough to feel instant but smooth enough not to look like a glitch.",
+    techStack: ["Unreal Engine", "Blueprints"],
+    whatILearned: "The hardest part of this project was finding the idea for the third room. Superliminal's whole mechanic is about scale, and once we'd already built a corridor and a two-room puzzle around it, finding a new angle without repeating what we'd done felt like running out of directions. We spent a long time stuck there before landing on light: turning the same mechanic into something the player has to trust rather than see clearly, using darkness and a moving light source to guide them instead of their eyes. The other real challenge was designing around a game we all knew well without copying it. We didn't want our corridor to feel like Superliminal's tutorial, or any other room to feel like a level we'd already played, so every idea had to pass that check before it made it into the level.",
 
     screenshots: [],
     links: [
@@ -381,7 +371,7 @@ function openProject(index) {
   if (p.videoUrl) {
     const isYouTube = p.videoUrl.includes('youtube.com') || p.videoUrl.includes('youtu.be');
     videoBox.innerHTML = isYouTube
-      ? `<iframe src="${p.videoUrl}" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>`
+      ? `<iframe src="${p.videoUrl}" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>`
       : `<video controls playsinline><source src="${p.videoUrl}" type="video/mp4"><source src="${p.videoUrl}" type="video/webm"></video>`;
     videoWrap.style.display = 'block';
   } else {
