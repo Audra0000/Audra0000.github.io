@@ -93,8 +93,8 @@ const projects = [
       },
       {
         title: "Resource Management",
-        text: "A significant part of my work went into the resource management system — both the offline and runtime sides. Offline: detecting dropped assets, generating engine-ready library files, and creating .meta files to store import settings. Runtime: reference counting to ensure only one copy of each resource lives in memory at a time, and handling renames, moves, and deletions without breaking dependencies.",
-        image: "", // e.g. "images/wave_resources.gif"
+        text: "A significant part of my work went into the resource management system - both the offline and runtime sides. Offline: detecting dropped assets, generating engine-ready library files, and creating .meta files to store import settings. Runtime: reference counting to ensure only one copy of each resource lives in memory at a time, and handling renames, moves, and deletions without breaking dependencies.",
+        image: "images/resourcemanager.png", // e.g. "images/wave_resources.gif"
       },
       {
         title: "Lua Scripting System",
@@ -108,7 +108,7 @@ const projects = [
       },
       {
         title: "Lighting System",
-        text: "I implemented point and directional lights from scratch — both the shader-side calculations and the editor integration. Lights are fully editable from the editor: colour, intensity, and range can be tweaked in real time and the results are immediately reflected on scene materials. The lighting model computes diffuse and specular contributions per light type and feeds them into the material pipeline.",
+        text: "I implemented point and directional lights from scratch - both the shader-side calculations and the editor integration. Lights are fully editable from the editor: colour, intensity, and range can be tweaked in real time and the results are immediately reflected on scene materials. The lighting model computes diffuse and specular contributions per light type and feeds them into the material pipeline.",
         image: "images/wave_light.gif", // e.g. "images/wave_lighting.jpg"
       },
     ],
@@ -122,7 +122,7 @@ const projects = [
       "Point and directional lights with real-time editor colour & intensity controls",
     ],
     techStack: ["C++", "OpenGL", "GLSL", "Lua", "LuaBridge", "Assimp", "Dear ImGui"],
-    whatILearned: "Building a resource manager from scratch taught me that asset pipelines are deceptively complex — handling renames, moves, and deletions without breaking dependencies requires careful design from day one. Shadow mapping forced me to fully understand coordinate spaces and the rendering pipeline at a level that reading about it never would have. Every system I built revealed a new layer of how professional engines actually work under the hood.",
+    whatILearned: "Building a resource manager from scratch taught me that asset pipelines are deceptively complex - handling renames, moves, and deletions without breaking dependencies requires careful design from day one. Shadow mapping forced me to fully understand coordinate spaces and the rendering pipeline at a level that reading about it never would have. Every system I built revealed a new layer of how professional engines actually work under the hood.",
 
     // ─── SCREENSHOTS ─────────────────────────────────────────────────────────
     // These are NOT used in the new layout (images go inside contributions above).
@@ -145,24 +145,24 @@ const projects = [
 
     contributions: [
       {
-        title: "Statue Interaction UI",
+        title: "Interaction UI",
         text: "I designed and implemented the on-screen prompts that guide the player through the game's statue puzzles, showing a button indicator to freeze enemy statues and a separate one to rotate puzzle statues into place. The system reads the active input device and updates the prompt accordingly.",
-        image: "",
+        image: "images/enemigolock.jpg",
       },
       {
         title: "Dynamic Popups",
         text: "Using NoesisGUI, I built a popup system that can be triggered from anywhere in the game to display contextual information without interrupting gameplay flow, handling layout, animation and dismissal logic in a reusable way.",
-        image: "",
+        image: "images/mask.jpg",
       },
       {
         title: "Input-Aware Tutorials",
         text: "I implemented a tutorial system that swaps its prompts and icons depending on whether the player is using a gamepad or a keyboard, so instructions always match the input the player is actually using.",
-        image: "",
+        image: "images/ControlsHint.jpg",
       },
       {
         title: "UI Stack System",
         text: "To keep the interface predictable as multiple screens and popups could appear at once, I built a stack-based manager that tracks which UI elements are open and closes or pauses lower layers automatically, preventing overlapping menus and popups from breaking the experience.",
-        image: "",
+        image: "images/UIQueueManager.jpg",
       },
     ],
 
@@ -193,18 +193,18 @@ const projects = [
     contributions: [
       {
         title: "Team Coordination & Production",
-        text: "As lead programmer, I coordinated the programming team's workload and priorities alongside general production duties, making sure the different systems being built in parallel came together into a coherent game.",
-        image: "",
+        text: "As lead programmer, I coordinated the programming team's workload and priorities alongside general production duties, ensuring that the different systems being developed in parallel came together into a cohesive game. I also used project management tools such as Notion to organize tasks, track progress, and facilitate communication within the team.",
+        image: "images/production.png",
       },
       {
         title: "Final Boss & Enemies",
-        text: "I developed the game's final boss encounter along with several of the mini enemies the player faces while exploring the railway lines, covering their behaviour, attack patterns and combat balance.",
-        image: "",
+        text: "I developed the game's final boss encounter, which features three distinct phases. In each phase, the boss changes its size and attack patterns, requiring the player to adapt their strategy throughout the fight. I also designed several of the smaller enemies encountered while exploring the railway lines. Some enemies use simple melee attacks to directly chase and attack the player, while others rely on area-of-effect attacks that force the player to dodge and reposition. Their behaviours and combat balance were designed to create varied and engaging encounters.",
+        image: "images/bossf.jpg",
       },
       {
-        title: "Core UI & Player Mechanics",
-        text: "I implemented the game's UI and the player's main mechanics, covering melee and ranged combat as well as the progressive skill upgrades the player unlocks while exploring.",
-        image: "",
+        title: "Player Mechanics",
+        text: "I implemented the game's UI and the player's main mechanics, including three different attack types: a melee attack, a medium-range whip attack, and an unlimited-range projectile attack using energy balls. I also implemented the player's movement abilities, such as the double jump and dash, as well as the progressive skill upgrade system that players unlock while exploring the game world.",
+        image: "images/combat.gif",
       },
       {
         title: "Technical Art",
@@ -242,17 +242,17 @@ const projects = [
       {
         title: "Room 1: Teaching the Mechanic",
         text: "The level opens with a short corridor where knee-height obstacles push the player toward jumping without any on-screen prompt, the same trick the original game uses to teach movement implicitly. Right after it, the first room asks for a single clear action: pick up the object left at the start, scale it up while pulling it closer, and drop it into the gap in the floor to reach the exit. The goal was to teach the core scaling mechanic through one unmissable puzzle before adding any more layers on top of it.",
-        image: "images/superliminal-room1.jpg",
+        image: "images/lvl1.png",
       },
       {
         title: "Room 2: Buttons and Doors",
         text: "The second room introduces buttons and doors working together. Three doors face three buttons, and the real exit only opens once all three are pressed at the same time. Players can either explore the side corridors to find two extra cubes, or realize that a single cube, scaled up enough, can cover all three buttons at once. We added soft lights above each button later on, after early testing showed players didn't immediately connect the three buttons to the same door.",
-        image: "images/superliminal-room2.jpg",
+        image: "images/lvl2.png",
       },
       {
         title: "Room 3: The Twist",
         text: "The third room hides a wall that can be grabbed and pulled aside, revealing a drop into near total darkness. From there, the player follows a row of wall lamps facing upward toward a glowing cube that works as a portable light source. That cube activates a button seen through a hidden window, opens a door, and later doubles as a bridge over a gap before the level moves into a short platforming section built on top of the maze walls below, lit from underneath by the same lamps.",
-        image: "images/superliminal-room3.jpg",
+        image: "images/lvl3.png",
       },
     ],
 
@@ -379,7 +379,7 @@ function openProject(index) {
     videoWrap.style.display = 'none';
   }
 
-  // Contributions — alternating layout
+  // Contributions - alternating layout
   const contribEl = document.getElementById('projectContributions');
   contribEl.innerHTML = (p.contributions || []).map((c, i) => {
     const reversed = i % 2 === 1 ? 'contrib-row--reversed' : '';
