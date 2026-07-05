@@ -365,15 +365,13 @@ ul { list-style: none; }
 .section-header { margin-bottom: 3rem; }
 
 .projects-list {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1.5rem;
 }
 
 .project-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
+  position: relative;
   border: 1px solid var(--border-light);
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -388,7 +386,7 @@ ul { list-style: none; }
   box-shadow: 0 16px 48px rgba(0,0,0,0.09);
 }
 
-/* Media side */
+/* Media fills the whole card, sets its height */
 .project-row-media {
   position: relative;
   aspect-ratio: 16/10;
@@ -409,77 +407,72 @@ ul { list-style: none; }
 .project-row-media.no-img img { display: none; }
 .project-row-media.no-img .project-img-fallback { display: flex; }
 
-/* Hover overlay on media */
-.project-row-media-overlay {
-  position: absolute; inset: 0;
-  display: flex; align-items: center; justify-content: center;
-  background: rgba(0, 113, 227, 0.55);
-  opacity: 0;
-  transition: opacity 0.28s var(--ease);
-}
-.project-row:hover .project-row-media-overlay { opacity: 1; }
-.project-row-view-btn {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: #fff;
-  letter-spacing: -0.01em;
-  transform: translateY(6px);
-  transition: transform 0.28s var(--ease);
-}
-.project-row:hover .project-row-view-btn { transform: none; }
+/* Old simple hover button, no longer used (replaced by full body overlay) */
+.project-row-media-overlay { display: none; }
 
-/* Body side */
+/* Body now overlays the media on hover, instead of sitting below it */
 .project-row-body {
-  padding: 2rem 2rem 2rem 2.5rem;
+  position: absolute;
+  inset: 0;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 0;
+  background: linear-gradient(180deg, rgba(10,14,20,0.88) 0%, rgba(10,14,20,0.93) 100%);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.28s var(--ease), transform 0.28s var(--ease);
+  overflow-y: auto;
+}
+.project-row:hover .project-row-body {
+  opacity: 1;
+  transform: none;
 }
 
 .project-tags {
   display: flex; flex-wrap: wrap; gap: 0.3rem;
-  margin-bottom: 0.9rem;
+  margin-bottom: 0.7rem;
 }
-.tag {
+.project-row-body .tag {
   font-size: 0.625rem;
   font-weight: 600;
   letter-spacing: 0.07em;
   text-transform: uppercase;
   padding: 0.2rem 0.55rem;
   border-radius: 50px;
-  background: var(--blue-light);
-  color: var(--blue);
-  border: 1px solid rgba(0,113,227,0.18);
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.18);
 }
 
 .project-row-body h3 {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: 700;
   letter-spacing: -0.03em;
-  color: var(--text);
-  margin-bottom: 0.55rem;
+  color: #fff;
+  margin-bottom: 0.45rem;
   line-height: 1.2;
 }
 .project-row-body > p {
-  font-size: 0.875rem;
-  color: var(--text-3);
-  line-height: 1.7;
+  font-size: 0.8125rem;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.55;
   letter-spacing: -0.01em;
-  margin-bottom: 1.1rem;
+  margin-bottom: 0.85rem;
 }
 
 /* Key systems list */
 .project-row-systems {
   list-style: none;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.1rem;
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
+  gap: 0.25rem;
 }
 .project-row-systems li {
   font-size: 0.8125rem;
-  color: var(--text-2);
+  color: rgba(255,255,255,0.75);
   padding-left: 1rem;
   position: relative;
   letter-spacing: -0.01em;
@@ -896,10 +889,12 @@ ul { list-style: none; }
   .pp-layout { grid-template-columns: 1fr; gap: 2.5rem; }
   .pp-right { order: -1; }
 }
+@media (hover: none) {
+  .project-row-body { opacity: 1; transform: none; }
+}
 @media (max-width: 768px) {
   .nav-links { display: none; }
-  .project-row { grid-template-columns: 1fr; }
-  .project-row-media { aspect-ratio: 16/9; }
+  .projects-list { grid-template-columns: 1fr; }
   .education-grid { grid-template-columns: 1fr; }
   .pp-meta-grid { grid-template-columns: 1fr; gap: 1.25rem; }
   .pp-screenshots { grid-template-columns: 1fr; }
