@@ -280,7 +280,7 @@ const projects = [
     tags: ["C++", "Raylib", "Box2D"],
 
     // TEMP: replace with the actual Racing Game gameplay video when ready.
-    videoUrl: "https://www.youtube.com/embed/J-ttC8Gt458",
+    videoUrl: "https://www.youtube.com/embed/XZELzawqLcU",
 
     contributions: [
       {
@@ -316,7 +316,7 @@ const projects = [
     tags: ["C++", "Raylib", "Box2D"],
 
     // TEMP: replace with the actual Pinball gameplay video when ready.
-    videoUrl: "https://www.youtube.com/embed/J-ttC8Gt458",
+    videoUrl: "https://www.youtube.com/embed/AHyHDmryK48",
 
     contributions: [
       {
