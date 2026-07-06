@@ -104,12 +104,17 @@ const projects = [
       {
         title: "Octree & Spatial Partitioning",
         text: "I built an Octree-based spatial partitioning system to accelerate scene queries. By subdividing the scene into an octree, the engine can quickly discard geometry outside the view frustum and speed up ray-casting for mouse picking and physics queries.",
-        image: "", // e.g. "images/wave_octree.jpg"
+        image: "images/octree.gif", // e.g. "images/wave_octree.jpg"
       },
       {
         title: "Lighting System",
         text: "I implemented point and directional lights from scratch - both the shader-side calculations and the editor integration. Lights are fully editable from the editor: colour, intensity, and range can be tweaked in real time and the results are immediately reflected on scene materials. The lighting model computes diffuse and specular contributions per light type and feeds them into the material pipeline.",
         image: "images/wave_light.gif", // e.g. "images/wave_lighting.jpg"
+      },
+      {
+        title: "Standalone build",
+        text: "Separated the editor from the runtime, allowing standalone game builds to be generated independently from the engine. The build process copies the necessary engine libraries and resources into a single folder, producing a self-contained executable that can be run without the editor.",
+        image: "images/BuildGeneration.gif", // e.g. "images/wave_lighting.jpg"
       },
     ],
 
@@ -138,7 +143,7 @@ const projects = [
     title: "Son of Ithaca",
     category: "UI Programming",
     meta: "UI Programming · 2024",
-    subtitle: "An Odyssey-inspired action-adventure game built on Wave Engine, where I developed the interaction and UI systems that tie the player's actions to the world.",
+    subtitle: "An Odyssey-inspired action-adventure game built on Wave Engine, where I developed the interaction and UI systems that tie the player's actions to the world. In these project i was focused on both engine tools and ui systems. This game is powered by Wave Engine, which I also contributed to.",
     tags: ["C++", "Wave Engine", "NoesisGUI"],
 
     videoUrl: "https://www.youtube.com/embed/PYzuc0fsHpM",
@@ -147,7 +152,7 @@ const projects = [
       {
         title: "Interaction UI",
         text: "I designed and implemented the on-screen prompts that guide the player through the game's statue puzzles, showing a button indicator to freeze enemy statues and a separate one to rotate puzzle statues into place. The system reads the active input device and updates the prompt accordingly.",
-        image: "images/enemigolock.jpg",
+        image: "images/interaction.gif",
       },
       {
         title: "Dynamic Popups",
@@ -156,8 +161,8 @@ const projects = [
       },
       {
         title: "Input-Aware Tutorials",
-        text: "I implemented a tutorial system that swaps its prompts and icons depending on whether the player is using a gamepad or a keyboard, so instructions always match the input the player is actually using.",
-        image: "images/ControlsHint.jpg",
+        text: "I implemented a tutorial system that swaps its prompts and icons depending on whether the player is using a gamepad or a keyboard, so instructions always match the input the player is actually using. It appears by range and it appears in the inicial tutorial, puzzles tutorial and utils tutorials such as potions.",
+        image: "images/tutorials.gif",
       },
       {
         title: "UI Stack System",
