@@ -143,7 +143,7 @@ const projects = [
     title: "Son of Ithaca",
     category: "UI Programming",
     meta: "UI Programming · 2024",
-    subtitle: "An Odyssey-inspired action-adventure game built on Wave Engine, where I developed the interaction and UI systems that tie the player's actions to the world. In these project i was focused on both engine tools and ui systems. This game is powered by Wave Engine, which I also contributed to.",
+    subtitle: "An Odyssey-inspired action-adventure game built on Wave Engine, where I developed the interaction and UI systems that tie the player's actions to the world. In this project I was focused on both engine tools and UI systems. This game is powered by Wave Engine, which I also contributed to.",
     tags: ["C++", "Wave Engine", "NoesisGUI"],
 
     videoUrl: "https://www.youtube.com/embed/PYzuc0fsHpM",
