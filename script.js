@@ -344,6 +344,57 @@ const projects = [
     links: [
       { url: "https://github.com/Aniolobolo/PinballGameFisica2", label: "View on GitHub", style: "primary" }
     ]
+  },
+
+  {
+    title: "PokéPair",
+    category: "AR Gameplay Programming",
+    meta: "AR Gameplay Programming · 2026",
+    subtitle: "An augmented reality version of the classic memory card game, built by a team of five in Unity with AR Foundation image tracking. Players lay printed Pokémon cards face down and flip them to watch each Pokémon appear in 3D on top of its card.",
+    tags: ["C#", "Unity", "AR Foundation"],
+
+    videoUrl: "https://www.youtube.com/embed/5v64JMGwjOQ",
+    videoVertical: true,   // vídeo en formato vertical (9:16)
+
+    contributions: [
+      {
+        title: "Flipped-Card Detection",
+        text: "I built the system that decides whether a card is face up or face down. A card counts as flipped when its image becomes tracked, and as face down again once the camera stops seeing it for a set amount of time. This is what lets the game trigger the right effects at the right moment and check whether two cards form a pair.",
+        image: "images/flipCard.gif",
+      },
+      {
+        title: "Appear & Disappear Animations",
+        text: "I created the animations that make each Pokémon pop in when its card is flipped and disappear when the card is covered, so the models feel like they are coming alive on the table instead of just switching on and off.",
+        image: "images/animationCards.gif",
+      },
+      {
+        title: "Match & Miss Feedback",
+        text: "I designed the audiovisual feedback that tells the player how each turn went. Correct pairs get particles, green rings, jumps, vibration and an aura that stays on the matched Pokémon, while mistakes shake the models sideways with red effects and their own sounds.",
+        image: "images/feedbackCards.gif",
+      },
+      {
+        title: "Playtesting & Documentation",
+        text: "I took part in the playtests on a real phone, which surfaced issues like slow card recognition, oversized models and sound effects that were too loud, and helped find solutions to them. I also contributed to the project documentation.",
+        image: "images/documentationCards.png",
+      },
+    ],
+
+    keySystems: [
+      "Image tracking of multiple physical cards with AR Foundation",
+      "A different 3D Pokémon prefab for each detected card",
+      "Flipped-card detection with appear and disappear animations",
+      "Hit effects: particles, green rings, jumps, vibration and aura",
+      "Miss effects: sideways shake with red effects and sounds",
+      "Debug mode to play on PC without cards or a phone",
+    ],
+    techStack: ["C#", "Unity", "AR Foundation", "ARCore"],
+    whatILearned: "Testing on a real phone showed me how differently AR behaves compared to the editor: problems like slow image recognition never appeared in simulation and only showed up with physical cards. Working on the feedback effects also taught me how much a simple memory game gains from clear audiovisual cues, and how much iteration goes into making a hit or a miss feel right.",
+
+    screenshots: [],
+    links: [
+      { url: "https://github.com/XXPabloS/Realitat-virtual-i-augmentada/releases/tag/Pok%C3%A9Pair", label: "View on GitHub", style: "primary" },
+      { url: "https://youtube.com/shorts/75o8RQsO13Q", label: "Third-person gameplay", style: "secondary" }
+    ]
   }
 ];
 
@@ -373,6 +424,7 @@ function openProject(index) {
   // Video
   const videoWrap = document.getElementById('projectVideoWrap');
   const videoBox  = document.getElementById('projectVideoContainer');
+  videoWrap.classList.toggle('pp-video-wrap--vertical', !!p.videoVertical);
   if (p.videoUrl) {
     const isYouTube = p.videoUrl.includes('youtube.com') || p.videoUrl.includes('youtu.be');
     videoBox.innerHTML = isYouTube
@@ -389,7 +441,7 @@ function openProject(index) {
   contribEl.innerHTML = (p.contributions || []).map((c, i) => {
     const reversed = i % 2 === 1 ? 'contrib-row--reversed' : '';
     const imgHtml = c.image
-      ? `<div class="contrib-media"><img src="${c.image}" alt="${c.title}" onerror="this.parentElement.style.display='none'"></div>`
+      ? `<div class="contrib-media"><img src="${c.image}" alt="${c.title}" onload="if(this.naturalHeight>this.naturalWidth)this.parentElement.classList.add('contrib-media--portrait')" onerror="this.parentElement.style.display='none'"></div>`
       : `<div class="contrib-media contrib-media--empty"></div>`;
     return `
       <div class="contrib-row ${reversed}">

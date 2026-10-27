@@ -1331,3 +1331,23 @@ body::before {
 
 /* --- Botones --- */
 .project-link-btn.primary { box-shadow: 0 10px 24px rgba(var(--accent-rgb), 0.30); }
+
+/* =============================================
+   MEDIOS VERTICALES (vídeo y GIFs en formato móvil)
+   ============================================= */
+/* Vídeo vertical: marco 9:16, estrecho y centrado.
+   Se activa con  videoVertical: true  en el proyecto (script.js). */
+.pp-video-wrap--vertical { max-width: min(360px, 45vh); }
+.pp-video-wrap--vertical .pp-video-container { aspect-ratio: 9 / 16; }
+
+/* Imagen/GIF vertical: se detecta sola; mantiene su proporción, sin recortar. */
+.contrib-media--portrait {
+  aspect-ratio: auto;
+  width: 100%;
+  max-width: 270px;
+  justify-self: center;
+}
+.contrib-media--portrait img {
+  height: auto;
+  object-fit: contain;
+}
