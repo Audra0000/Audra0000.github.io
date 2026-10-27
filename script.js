@@ -381,11 +381,9 @@ const projects = [
 
     keySystems: [
       "Image tracking of multiple physical cards with AR Foundation",
-      "A different 3D Pokémon prefab for each detected card",
       "Flipped-card detection with appear and disappear animations",
-      "Hit effects: particles, green rings, jumps, vibration and aura",
+      "Hit effects: green rings, jumps, vibration and aura",
       "Miss effects: sideways shake with red effects and sounds",
-      "Debug mode to play on PC without cards or a phone",
     ],
     techStack: ["C#", "Unity", "AR Foundation", "ARCore"],
     whatILearned: "Testing on a real phone showed me how differently AR behaves compared to the editor: problems like slow image recognition never appeared in simulation and only showed up with physical cards. Working on the feedback effects also taught me how much a simple memory game gains from clear audiovisual cues, and how much iteration goes into making a hit or a miss feel right.",
